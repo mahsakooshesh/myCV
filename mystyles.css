@@ -1,0 +1,108 @@
+body {
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: coral;
+    align-content: center;
+    max-width: 100%;
+}
+
+body p {
+    white-space: wrap;
+    overflow:auto;
+    text-overflow: ellipsis;
+    max-width: 900px;
+}
+
+#container {
+    display: grid;
+    grid-template-rows: 1fr 9fr 9fr 1fr /auto;
+    padding: 30px;
+    background-color: beige;
+}
+
+header {
+    grid-row: 1;
+    margin: 10px;
+    text-align: center;
+    font-style: italic;
+    font-size: 2.2rem;
+    font-weight: bolder;
+}
+
+h2 {
+    text-align: center;
+}
+
+hr {
+    border-top: 1px solid brown;
+}
+
+.summary {
+    grid-row: 2;
+    display: grid;
+    grid-template: "A B" auto / 1fr 3fr;
+    text-align: justify;
+}
+
+img {
+    margin-left: 30px;
+    grid-area: A;
+    border: 1px solid brown;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.summary p {
+    grid-area: B;
+    text-align: left;
+    margin-left: 10px;
+}
+
+#main {
+    grid-row: 3;
+    margin: 20px;
+    display: grid;
+    grid-template: "C D" 1fr /1fr 1fr;
+}
+
+.jobb h2, ul {
+    grid-area: C;
+}
+
+.utbildning h2, ul {
+    grid-area: D;
+}
+
+.footer p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
+    max-width: 100%;
+    }
+
+@media (max-width: 600px){
+    #container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    .summary {
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+@media (max-width: 800px) {
+
+    #main {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    img {
+        max-width: 50%;
+    }
+ 
+}
+}
